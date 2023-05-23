@@ -1,0 +1,47 @@
+NETWORK:
+  NAME: demo
+  EXTERNAL: true
+CRYPTO_PATH: /pan/crypto-config
+ARTIFACTS_PATH: /pan/channel-artifacts
+# Below is official configuration
+OrdererOrgs:
+  - Name: Orderer
+    Domain: example.com
+    Specs:
+      - Hostname: orderer1
+      - Hostname: orderer2
+      - Hostname: orderer3
+      - Hostname: orderer4
+PeerOrgs:
+  - Name: Org1
+    #Domain: org1.example.com
+    Domain: org1.shit.com
+    EnableNodeOUs: false
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+
+  - Name: Org2
+    Domain: org2.example.com
+    EnableNodeOUs: false
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+
+  - Name: Org3
+    Domain: org3.example.com
+    EnableNodeOUs: false
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+
+  - Name: Org4
+    Domain: org4.example.com
+    EnableNodeOUs: false
+    Template:
+      Count: 1
+    Users:
+      Count: 1

@@ -1,0 +1,7 @@
+*.pyc
+.idea
+.vscode
+.ipynb_checkpoints
+__pycache__
+tmp.jar
+.venv

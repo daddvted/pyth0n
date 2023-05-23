@@ -1,0 +1,4 @@
+version: "3"
+networks: !include net.yaml
+services: !include svc.yaml
+

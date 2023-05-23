@@ -1,0 +1,5 @@
+# Generate weather forecast today
+30 6 * * * /usr/local/bin/python3 /root/raspberrypi/voice-weather-forecast.py today &>> /root/weather.log
+
+# Generate weather forecast tomorrow
+30 19 * * * /usr/local/bin/python3 /root/raspberrypi/voice-weather-forecast.py tomorrow &>> /root/weather.log
