@@ -5,3 +5,4 @@
 __pycache__
 tmp.jar
 .venv
+.python-version
