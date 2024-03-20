@@ -2,37 +2,9 @@ import re
 import ssl
 import math
 from contextlib import contextmanager
-import paramiko
 from pyVim.connect import SmartConnect, Disconnect
 from pyVmomi import vim
 
-
-def run_remote_command(host, port, username, password, cmds: list, ) -> tuple:
-    """
-    Run remote command
-
-    :param host:
-    :param port:
-    :param username:
-    :param password:
-    :param cmds:
-    :return: A tuple with 'host' as 1st element, and 2nd element for result of every command in 'cmds' as value(list)
-    """
-
-    try:
-        client = paramiko.SSHClient()
-        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        client.connect(hostname=host, port=port, username=username, password=password)
-
-        result = []
-        for cmd in cmds:
-            _, stdout, stderr = client.exec_command(cmd)
-            if stdout:
-                result.append(stdout.read().decode().strip())
-        return (host, result)
-    except Exception as err:
-        print(f"[run_remote_command]:{err}")
-        return ()
 
 
 def convert_size(size_bytes):
